@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thorakao Plus — Câu chuyện</title>
+  <meta name="description" content="Trang câu chuyện thương hiệu Thorakao Plus, di sản kem nghệ Việt Nam và hành trình làm mới." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <div class="topbar">Miễn phí vận chuyển cho đơn từ <strong>299.000đ</strong> · Bộ quà tặng kem nghệ giảm <strong>15%</strong></div>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">T+</div>
+          <div class="brand-text">
+            <b>THORAKAO PLUS</b>
+            <span>Kem nghệ · Di sản Việt Nam</span>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+          <a class="" href="index.html">Trang chủ</a>
+          <a class="" href="products.html">Sản phẩm</a>
+          <a class="" href="reviews.html">Đánh giá</a>
+          <a class="" href="cart.html">Giỏ hàng</a>
+          <a class="active" href="about.html">Câu chuyện</a>
+          <a class="" href="contact.html">Liên hệ</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="chip-btn mobile-only" onclick="alert('Menu mobile có thể làm tiếp.')">Menu</button>
+          <button class="chip-btn" onclick="location.href='products.html'">Tìm kiếm</button>
+          <button class="icon-btn" onclick="location.href='cart.html'">🛒 <span class="badge" id="cartCount">0</span></button>
+        </div>
+      </div>
+    </header>
+    
+<main class="container">
+
+<section class="page-hero">
+  <div class="page-card">
+    <div class="breadcrumb">Home page / Câu chuyện</div>
+    <h1>Câu chuyện <em style="color:var(--gold-deep);font-style:normal;">Thorakao</em></h1>
+    <p class="lead">Trang nhánh này giúp thương hiệu có chiều sâu: lịch sử, nguyên liệu, triết lý và định vị cho dòng kem nghệ.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="story">
+    <div class="panel">
+      <h4>Di sản Việt Nam</h4>
+      <p>Thorakao Plus lấy cảm hứng từ lịch sử thương hiệu kem nghệ Việt, nhưng thiết kế lại theo ngôn ngữ hiện đại, ấm và sang hơn.</p>
+      <div class="grid-2">
+        <div class="kpi"><b>1957</b><span>Năm bắt đầu</span></div>
+        <div class="kpi"><b>Kem nghệ</b><span>Chủ đề chính</span></div>
+      </div>
+    </div>
+    <div class="panel">
+      <h4>Hành trình phát triển</h4>
+      <div class="faq-item open">
+        <button class="faq-q">Nền tảng của thương hiệu <span class="arrow">⌄</span></button>
+        <div class="faq-a" style="display:block">Bắt đầu từ kem nghệ và các nguyên liệu thiên nhiên quen thuộc của Việt Nam.</div>
+      </div>
+      <div class="faq-item open" style="margin-top:12px;">
+        <button class="faq-q">Hướng làm mới <span class="arrow">⌄</span></button>
+        <div class="faq-a" style="display:block">Dùng nền kem nghệ #FFF8E1, vàng nghệ, caramel và terracotta để tạo cảm giác ấm, sạch và có truyền thống.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Giỏ hàng">
+  <div class="drawer-head">
+    <b>Giỏ hàng</b>
+    <button class="close" id="closeCartBtn">×</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="summary">
+      <span>Tổng tiền</span>
+      <span id="cartTotal">0đ</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%" onclick="location.href='checkout.html'">Thanh toán</button>
+  </div>
+</aside>
+
+<div class="modal" id="productModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-img" id="modalImageArea"></div>
+      <div class="modal-content">
+        <div class="modal-head">
+          <div>
+            <div class="mini-tag" id="modalTag">Best seller</div>
+            <h3 id="modalTitle">Tên sản phẩm</h3>
+            <div class="rating" id="modalBrand">Thorakao Plus</div>
+          </div>
+          <button class="close" id="closeModalBtn">×</button>
+        </div>
+        <p class="desc" id="modalDesc"></p>
+        <div class="price-row">
+          <div class="price-now" id="modalPrice"></div>
+          <div class="price-old" id="modalOld"></div>
+        </div>
+        <div class="pill-list" id="modalPills"></div>
+        <div class="action-row" style="margin-top:12px;">
+          <button class="small-btn small-primary" id="modalAddBtn">Thêm vào giỏ</button>
+          <button class="small-btn small-secondary" onclick="location.href='cart.html'">Mua ngay</button>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-box"><b>Công dụng</b><span id="modalBenefit"></span></div>
+          <div class="detail-box"><b>Cách dùng</b><span id="modalUse"></span></div>
+          <div class="detail-box"><b>Thành phần chính</b><span id="modalIngredients"></span></div>
+          <div class="detail-box"><b>Lưu ý</b><span id="modalNote"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script>if(window.initHome) initHome();</script>
+</body>
+</html>
