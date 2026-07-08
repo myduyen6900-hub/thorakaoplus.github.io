@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thorakao Plus — Thanh toán</title>
+  <meta name="description" content="Trang thanh toán demo cho Thorakao Plus với form cơ bản và tổng đơn hàng." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <div class="topbar">Miễn phí vận chuyển cho đơn từ <strong>299.000đ</strong> · Bộ quà tặng kem nghệ giảm <strong>15%</strong></div>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">T+</div>
+          <div class="brand-text">
+            <b>THORAKAO PLUS</b>
+            <span>Kem nghệ · Di sản Việt Nam</span>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+          <a class="" href="index.html">Trang chủ</a>
+          <a class="" href="products.html">Sản phẩm</a>
+          <a class="" href="reviews.html">Đánh giá</a>
+          <a class="" href="cart.html">Giỏ hàng</a>
+          <a class="" href="about.html">Câu chuyện</a>
+          <a class="" href="contact.html">Liên hệ</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="chip-btn mobile-only" onclick="alert('Menu mobile có thể làm tiếp.')">Menu</button>
+          <button class="chip-btn" onclick="location.href='products.html'">Tìm kiếm</button>
+          <button class="icon-btn" onclick="location.href='cart.html'">🛒 <span class="badge" id="cartCount">0</span></button>
+        </div>
+      </div>
+    </header>
+    
+<main class="container">
+
+<section class="page-hero">
+  <div class="page-card">
+    <div class="breadcrumb">Home page / Giỏ hàng / Thanh toán</div>
+    <h1>Trang <em style="color:var(--gold-deep);font-style:normal;">Thanh toán</em></h1>
+    <p class="lead">Trang nhánh này mô phỏng bước chốt đơn. Nếu làm dự án thật, đây là nơi nối đến backend, cổng thanh toán và quản lý đơn hàng.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid-2">
+    <div class="panel">
+      <h4>Thông tin khách hàng</h4>
+      <div class="form-row"><input class="field" placeholder="Họ và tên"></div>
+      <div class="form-row"><input class="field" placeholder="Số điện thoại"></div>
+      <div class="form-row"><input class="field" placeholder="Địa chỉ nhận hàng"></div>
+      <div class="form-row"><textarea class="field" rows="4" placeholder="Ghi chú đơn hàng"></textarea></div>
+      <button class="btn btn-primary" style="width:100%" onclick="alert('Demo checkout đã sẵn sàng. Nếu muốn, mình có thể làm bản thanh toán thật với form, phí ship và mã giảm giá.')">Đặt hàng</button>
+    </div>
+    <div class="panel">
+      <h4>Tóm tắt đơn hàng</h4>
+      <p>Đây là chỗ bạn sẽ gắn phí ship, coupon và phương thức thanh toán.</p>
+      <div id="cartItems"></div>
+      <div class="summary" style="margin-top:16px;"><span>Tổng tiền</span><span id="cartTotal">0đ</span></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Giỏ hàng">
+  <div class="drawer-head">
+    <b>Giỏ hàng</b>
+    <button class="close" id="closeCartBtn">×</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="summary">
+      <span>Tổng tiền</span>
+      <span id="cartTotal">0đ</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%" onclick="location.href='checkout.html'">Thanh toán</button>
+  </div>
+</aside>
+
+<div class="modal" id="productModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-img" id="modalImageArea"></div>
+      <div class="modal-content">
+        <div class="modal-head">
+          <div>
+            <div class="mini-tag" id="modalTag">Best seller</div>
+            <h3 id="modalTitle">Tên sản phẩm</h3>
+            <div class="rating" id="modalBrand">Thorakao Plus</div>
+          </div>
+          <button class="close" id="closeModalBtn">×</button>
+        </div>
+        <p class="desc" id="modalDesc"></p>
+        <div class="price-row">
+          <div class="price-now" id="modalPrice"></div>
+          <div class="price-old" id="modalOld"></div>
+        </div>
+        <div class="pill-list" id="modalPills"></div>
+        <div class="action-row" style="margin-top:12px;">
+          <button class="small-btn small-primary" id="modalAddBtn">Thêm vào giỏ</button>
+          <button class="small-btn small-secondary" onclick="location.href='cart.html'">Mua ngay</button>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-box"><b>Công dụng</b><span id="modalBenefit"></span></div>
+          <div class="detail-box"><b>Cách dùng</b><span id="modalUse"></span></div>
+          <div class="detail-box"><b>Thành phần chính</b><span id="modalIngredients"></span></div>
+          <div class="detail-box"><b>Lưu ý</b><span id="modalNote"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script>if(window.initCartPage) initCartPage();</script>
+</body>
+</html>

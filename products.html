@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thorakao Plus — Sản phẩm</title>
+  <meta name="description" content="Trang sản phẩm Thorakao Plus với bộ lọc, tìm kiếm, sắp xếp và modal xem chi tiết." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <div class="topbar">Miễn phí vận chuyển cho đơn từ <strong>299.000đ</strong> · Bộ quà tặng kem nghệ giảm <strong>15%</strong></div>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">T+</div>
+          <div class="brand-text">
+            <b>THORAKAO PLUS</b>
+            <span>Kem nghệ · Di sản Việt Nam</span>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+          <a class="" href="index.html">Trang chủ</a>
+          <a class="active" href="products.html">Sản phẩm</a>
+          <a class="" href="reviews.html">Đánh giá</a>
+          <a class="" href="cart.html">Giỏ hàng</a>
+          <a class="" href="about.html">Câu chuyện</a>
+          <a class="" href="contact.html">Liên hệ</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="chip-btn mobile-only" onclick="alert('Menu mobile có thể làm tiếp.')">Menu</button>
+          <button class="chip-btn" onclick="location.href='products.html'">Tìm kiếm</button>
+          <button class="icon-btn" onclick="location.href='cart.html'">🛒 <span class="badge" id="cartCount">0</span></button>
+        </div>
+      </div>
+    </header>
+    
+<main class="container">
+
+<section class="page-hero">
+  <div class="page-card">
+    <div class="breadcrumb">Home page / Sản phẩm</div>
+    <h1>Trang <em style="color:var(--gold-deep);font-style:normal;">Sản phẩm</em></h1>
+    <p class="lead">Đây là trang con chính để người dùng tìm, lọc và bấm vào từng sản phẩm. Cấu trúc này giống các trang official có danh mục rõ ràng.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2 class="section-title">Tất cả <em>sản phẩm</em></h2><p class="section-sub">Tìm kiếm theo tên, sắp xếp theo giá và bấm vào card để xem chi tiết.</p></div></div>
+  <div class="toolbar">
+    <div class="search">
+      <input id="searchInput" type="text" placeholder="Tìm kem nghệ, serum, dầu gội..." />
+      <button id="searchBtn">Tìm</button>
+    </div>
+    <select class="select" id="sortSelect">
+      <option value="popular">Sắp xếp: Phổ biến</option>
+      <option value="price-asc">Giá: Thấp → Cao</option>
+      <option value="price-desc">Giá: Cao → Thấp</option>
+      <option value="name">Tên: A → Z</option>
+    </select>
+  </div>
+  <div class="toolbar" id="categoryFilters"></div>
+  <div class="grid-4" id="productGrid"></div>
+</section>
+
+</main>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Giỏ hàng">
+  <div class="drawer-head">
+    <b>Giỏ hàng</b>
+    <button class="close" id="closeCartBtn">×</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="summary">
+      <span>Tổng tiền</span>
+      <span id="cartTotal">0đ</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%" onclick="location.href='checkout.html'">Thanh toán</button>
+  </div>
+</aside>
+
+<div class="modal" id="productModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-img" id="modalImageArea"></div>
+      <div class="modal-content">
+        <div class="modal-head">
+          <div>
+            <div class="mini-tag" id="modalTag">Best seller</div>
+            <h3 id="modalTitle">Tên sản phẩm</h3>
+            <div class="rating" id="modalBrand">Thorakao Plus</div>
+          </div>
+          <button class="close" id="closeModalBtn">×</button>
+        </div>
+        <p class="desc" id="modalDesc"></p>
+        <div class="price-row">
+          <div class="price-now" id="modalPrice"></div>
+          <div class="price-old" id="modalOld"></div>
+        </div>
+        <div class="pill-list" id="modalPills"></div>
+        <div class="action-row" style="margin-top:12px;">
+          <button class="small-btn small-primary" id="modalAddBtn">Thêm vào giỏ</button>
+          <button class="small-btn small-secondary" onclick="location.href='cart.html'">Mua ngay</button>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-box"><b>Công dụng</b><span id="modalBenefit"></span></div>
+          <div class="detail-box"><b>Cách dùng</b><span id="modalUse"></span></div>
+          <div class="detail-box"><b>Thành phần chính</b><span id="modalIngredients"></span></div>
+          <div class="detail-box"><b>Lưu ý</b><span id="modalNote"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script>if(window.initProductsPage) initProductsPage();</script>
+</body>
+</html>

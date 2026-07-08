@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thorakao Plus — Trang chủ</title>
+  <meta name="description" content="Trang chủ Thorakao Plus với tông kem nghệ #FFF8E1, sản phẩm nổi bật, câu chuyện thương hiệu và chức năng giỏ hàng cơ bản." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+    <div class="topbar">Miễn phí vận chuyển cho đơn từ <strong>299.000đ</strong> · Bộ quà tặng kem nghệ giảm <strong>15%</strong></div>
+    <header>
+      <div class="container nav">
+        <div class="brand">
+          <div class="brand-mark">T+</div>
+          <div class="brand-text">
+            <b>THORAKAO PLUS</b>
+            <span>Kem nghệ · Di sản Việt Nam</span>
+          </div>
+        </div>
+        <nav class="nav-links" aria-label="Điều hướng chính">
+          <a class="active" href="index.html">Trang chủ</a>
+          <a class="" href="products.html">Sản phẩm</a>
+          <a class="" href="reviews.html">Đánh giá</a>
+          <a class="" href="cart.html">Giỏ hàng</a>
+          <a class="" href="about.html">Câu chuyện</a>
+          <a class="" href="contact.html">Liên hệ</a>
+        </nav>
+        <div class="nav-actions">
+          <button class="chip-btn mobile-only" onclick="alert('Menu mobile có thể làm tiếp.')">Menu</button>
+          <button class="chip-btn" onclick="location.href='products.html'">Tìm kiếm</button>
+          <button class="icon-btn" onclick="location.href='cart.html'">🛒 <span class="badge" id="cartCount">0</span></button>
+        </div>
+      </div>
+    </header>
+    
+<main class="container">
+
+<section class="page-hero">
+  <div class="page-card">
+    <div class="breadcrumb">Home page / Trang chủ</div>
+    <h1>Vẻ đẹp <em style="color:var(--gold-deep);font-style:normal;">thuần Việt</em><br>trong diện mạo mới</h1>
+    <p class="lead">Trang chủ là nơi dẫn người dùng sang các trang con: sản phẩm, đánh giá, giỏ hàng, câu chuyện thương hiệu và liên hệ. Đây là kiểu cấu trúc giống website official.</p>
+    <div class="hero-mini">
+      <div class="grid-2">
+        <div class="kpi"><b>Menu rõ ràng</b><span>Điều hướng sang trang sản phẩm, đánh giá, giỏ hàng, câu chuyện và liên hệ.</span></div>
+        <div class="kpi"><b>Click được</b><span>Card sản phẩm có thể mở modal chi tiết hoặc đi sang trang riêng.</span></div>
+      </div>
+    </div>
+    <div style="display:flex; gap:12px; flex-wrap:wrap; margin-top:18px;">
+      <button class="btn btn-primary" onclick="location.href='products.html'">Xem sản phẩm</button>
+      <button class="btn btn-secondary" onclick="location.href='about.html'">Câu chuyện thương hiệu</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2 class="section-title">Sản phẩm <em>nổi bật</em></h2><p class="section-sub">Bản home chỉ show một phần, để người dùng bấm sang trang Sản phẩm đầy đủ.</p></div><a class="chip-btn" href="products.html">Xem tất cả</a></div>
+  <div class="grid-4" id="productGrid"></div>
+</section>
+
+<section class="section">
+  <div class="banner">
+    <div>
+      <h3 style="margin:0 0 8px; font-size:28px;">Bộ quà tặng kem nghệ cho mùa mới</h3>
+      <p>Kết hợp kem nghệ, serum, dầu gội và chống nắng. Phần này có thể dẫn sang trang product-detail hoặc cart.</p>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px; align-items:flex-start;">
+      <button class="btn btn-primary" onclick="openProduct('combo-tet')">Xem combo</button>
+      <button class="btn btn-secondary" onclick="location.href='cart.html'">Đi tới giỏ hàng</button>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-head"><div><h2 class="section-title">Trang nhánh <em>quan trọng</em></h2><p class="section-sub">Mỗi web official thường có nhiều trang con, không chỉ một file. Bạn đang đi đúng hướng khi tách thành nhiều trang.</p></div></div>
+  <div class="feature-grid">
+    <div class="feature"><div class="ico">🛍️</div><b>Trang sản phẩm</b><span>Danh sách, lọc, tìm kiếm, xem chi tiết.</span></div>
+    <div class="feature"><div class="ico">⭐</div><b>Trang đánh giá</b><span>Đánh giá, FAQ, cảm nhận khách hàng.</span></div>
+    <div class="feature"><div class="ico">🛒</div><b>Trang giỏ hàng</b><span>Xem số lượng, sửa số lượng, thanh toán.</span></div>
+    <div class="feature"><div class="ico">📞</div><b>Trang liên hệ</b><span>Hotline, form, showroom, hỗ trợ.</span></div>
+  </div>
+</section>
+
+</main>
+<div class="drawer-overlay" id="drawerOverlay"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Giỏ hàng">
+  <div class="drawer-head">
+    <b>Giỏ hàng</b>
+    <button class="close" id="closeCartBtn">×</button>
+  </div>
+  <div class="drawer-body" id="cartItems"></div>
+  <div class="drawer-foot">
+    <div class="summary">
+      <span>Tổng tiền</span>
+      <span id="cartTotal">0đ</span>
+    </div>
+    <button class="btn btn-primary" style="width:100%" onclick="location.href='checkout.html'">Thanh toán</button>
+  </div>
+</aside>
+
+<div class="modal" id="productModal">
+  <div class="modal-card">
+    <div class="modal-top">
+      <div class="modal-img" id="modalImageArea"></div>
+      <div class="modal-content">
+        <div class="modal-head">
+          <div>
+            <div class="mini-tag" id="modalTag">Best seller</div>
+            <h3 id="modalTitle">Tên sản phẩm</h3>
+            <div class="rating" id="modalBrand">Thorakao Plus</div>
+          </div>
+          <button class="close" id="closeModalBtn">×</button>
+        </div>
+        <p class="desc" id="modalDesc"></p>
+        <div class="price-row">
+          <div class="price-now" id="modalPrice"></div>
+          <div class="price-old" id="modalOld"></div>
+        </div>
+        <div class="pill-list" id="modalPills"></div>
+        <div class="action-row" style="margin-top:12px;">
+          <button class="small-btn small-primary" id="modalAddBtn">Thêm vào giỏ</button>
+          <button class="small-btn small-secondary" onclick="location.href='cart.html'">Mua ngay</button>
+        </div>
+        <div class="detail-grid">
+          <div class="detail-box"><b>Công dụng</b><span id="modalBenefit"></span></div>
+          <div class="detail-box"><b>Cách dùng</b><span id="modalUse"></span></div>
+          <div class="detail-box"><b>Thành phần chính</b><span id="modalIngredients"></span></div>
+          <div class="detail-box"><b>Lưu ý</b><span id="modalNote"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/app.js"></script>
+<script>if(window.initHome) initHome();</script>
+</body>
+</html>
